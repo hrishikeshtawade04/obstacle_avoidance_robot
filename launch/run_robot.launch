@@ -1,0 +1,13 @@
+<launch>
+
+    <arg name="enableBag" 
+         default="false"
+    />
+    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    </include>
+    <node
+        pkg="obstacle_avoidance_robot" name="walker" type="walker" output="screen" launch-prefix="gnome-terminal --command"/>
+    <node pkg="rosbag" name="stored_turtlebot" type="record" args="--all --duration=30 --output-name=$(find obstacle_avoidance_robot)/results/storedTurtlebotData.bag -x /camera/(.*)" if="$(arg enableBag)"
+    />
+
+</launch>
