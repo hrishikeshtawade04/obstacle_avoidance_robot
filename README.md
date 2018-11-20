@@ -37,7 +37,7 @@ cd catkin_ws/
 catkin_make
 source devel/setup.bash
 cd src/
-git clone -b Week11_HW https://github.com/hrishikeshtawade04/obstacle_avoidance_robot.git
+git clone https://github.com/hrishikeshtawade04/obstacle_avoidance_robot.git
 cd ..
 catkin_make
 ```
@@ -76,7 +76,7 @@ sudo killall -9 roscore   (to stop any ongoing roscore)
 sudo killall -9 rosmaster (to stop any ongoing roscore)
 cd <path to catkin_ws>
 source devel/setup.bash
-roslaunch roslaunch obstacle_avoidance_robot run_robot.launch enableBag:=true
+roslaunch obstacle_avoidance_robot run_robot.launch enableBag:=true
 ```
 To verify the .bag file run the following command.
 ```
